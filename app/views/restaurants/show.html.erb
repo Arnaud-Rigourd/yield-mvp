@@ -14,6 +14,7 @@
   <ul>
     <li><%= r.user.first_name %>: "<%= r.content %>"</li>
     <li>Rate: <%= r.rating %>/5</li>
+    <li><%= link_to "Delete review", restaurant_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
   </ul>
 <% end %>
 
