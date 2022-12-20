@@ -1,0 +1,23 @@
+<h1><%= @restaurant.name %></h1>
+
+<p><%= link_to "back home", restaurants_path %></p>
+
+<ul>
+  <li>Category: <%= @restaurant.category.capitalize %></li>
+  <li>Address: <%= @restaurant.address %></li>
+  <li>By: <%= @restaurant.user.first_name %></li>
+</ul>
+
+<h3>Reviews</h3>
+
+<% @reviews.each do |r| %>
+  <ul>
+    <li><%= r.user.first_name %>: "<%= r.content %>"</li>
+    <li>Rate: <%= r.rating %>/5</li>
+    <li><%= link_to "Delete review", restaurant_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
+  </ul>
+<% end %>
+
+<p><%= link_to "Add a review", new_restaurant_review_path(@restaurant) %></p>
+<p><%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %></p>
+<p><%= link_to "Delete this Restaurant", restaurant_path(@restaurant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
