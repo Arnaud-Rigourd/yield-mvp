@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   has_many :restaurants
-  # has_many :reviews
+  has_many :reviews
 
 end
