@@ -7,3 +7,6 @@
   <li>Address: <%= @restaurant.address %></li>
   <li>By: <%= @restaurant.user.first_name %></li>
 </ul>
+
+<p><%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %></p>
+<p><%= link_to "Delete this Restaurant", restaurant_path(@restaurant), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>

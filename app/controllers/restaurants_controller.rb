@@ -34,6 +34,14 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    if @restaurant.destroy
+      redirect_to restaurants_path
+    else
+      render :show, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def restaurant_params
