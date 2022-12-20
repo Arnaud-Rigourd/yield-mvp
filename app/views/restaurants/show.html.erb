@@ -1,0 +1,9 @@
+<h1><%= @restaurant.name %></h1>
+
+<p><%= link_to "back home", restaurants_path %></p>
+
+<ul>
+  <li>Category: <%= @restaurant.category.capitalize %></li>
+  <li>Address: <%= @restaurant.address %></li>
+  <li>By: <%= @restaurant.user.first_name %></li>
+</ul>
